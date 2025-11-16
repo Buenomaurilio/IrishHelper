@@ -1,0 +1,635 @@
+[
+{
+  "model": "catalog.resource",
+  "pk": 1,
+  "fields": {
+    "section": "useful_links",
+    "title": "Agendar IRP (GNIB) — Dublin",
+    "description": "Agende sua primeira emissão ou renovação do Irish Residence Permit.",
+    "url": "https://www.gov.ie/en/department-of-justice-home-affairs-and-migration/services/how-to-get-an-irish-residence-permit/",
+    "phone": "",
+    "address": "",
+    "is_official": true,
+    "country": "IE",
+    "locale": "pt-br",
+    "sort_order": 1,
+    "is_active": true,
+    "created_at": "2025-11-04T21:47:20.482Z",
+    "updated_at": "2025-11-04T21:47:20.482Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 2,
+  "fields": {
+    "section": "useful_links",
+    "title": "Solicitar PPS — MyWelfare",
+    "description": "Página oficial para solicitar o PPS Number.",
+    "url": "https://www.mywelfare.ie/",
+    "phone": "",
+    "address": "",
+    "is_official": true,
+    "country": "IE",
+    "locale": "pt-br",
+    "sort_order": 2,
+    "is_active": true,
+    "created_at": "2025-11-04T21:47:20.484Z",
+    "updated_at": "2025-11-04T21:47:20.484Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 3,
+  "fields": {
+    "section": "useful_links",
+    "title": "Leap Card (Adult/Student)",
+    "description": "Compra, recarga e informações do TFI Leap Card.",
+    "url": "https://about.leapcard.ie/",
+    "phone": "",
+    "address": "",
+    "is_official": true,
+    "country": "IE",
+    "locale": "pt-br",
+    "sort_order": 3,
+    "is_active": true,
+    "created_at": "2025-11-04T21:47:20.486Z",
+    "updated_at": "2025-11-04T21:47:20.486Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 4,
+  "fields": {
+    "section": "useful_links",
+    "title": "NDLS — Carteira de Motorista",
+    "description": "Informações sobre learner permit e full licence.",
+    "url": "https://www.ndls.ie/",
+    "phone": "",
+    "address": "",
+    "is_official": true,
+    "country": "IE",
+    "locale": "pt-br",
+    "sort_order": 4,
+    "is_active": true,
+    "created_at": "2025-11-04T21:47:20.487Z",
+    "updated_at": "2025-11-04T21:47:20.487Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 5,
+  "fields": {
+    "section": "how_to",
+    "title": "Como solicitar PPS (passo a passo)",
+    "description": "1) Crie conta no MyWelfare.\n2) Preencha a solicitação de PPS.\n3) Anexe documentos (identidade, comprovante de endereço e motivo).\n4) Acompanhe o retorno por e-mail.",
+    "url": "https://www.gov.ie/en/service/12e6de-get-a-personal-public-service-pps-number/",
+    "phone": "",
+    "address": "",
+    "is_official": true,
+    "country": "IE",
+    "locale": "pt-br",
+    "sort_order": 1,
+    "is_active": true,
+    "created_at": "2025-11-04T21:47:20.488Z",
+    "updated_at": "2025-11-04T21:47:20.488Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 6,
+  "fields": {
+    "section": "phones",
+    "title": "Emergência — 112 / 999",
+    "description": "Polícia, bombeiros e ambulância.",
+    "url": "",
+    "phone": "112",
+    "address": "",
+    "is_official": false,
+    "country": "IE",
+    "locale": "pt-br",
+    "sort_order": 1,
+    "is_active": true,
+    "created_at": "2025-11-04T21:47:20.490Z",
+    "updated_at": "2025-11-04T21:47:20.490Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 7,
+  "fields": {
+    "section": "addresses",
+    "title": "IRP (GNIB) — Dublin (Burgh Quay)",
+    "description": "",
+    "url": "https://maps.google.com/?q=Burgh+Quay+Dublin",
+    "phone": "",
+    "address": "13-14 Burgh Quay, Dublin 2, D02 XK70",
+    "is_official": false,
+    "country": "IE",
+    "locale": "pt-br",
+    "sort_order": 1,
+    "is_active": true,
+    "created_at": "2025-11-04T21:47:20.492Z",
+    "updated_at": "2025-11-04T21:47:20.492Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 8,
+  "fields": {
+    "section": "videos",
+    "title": "PPS: tutorial prático",
+    "description": "Vídeo explicando a solicitação do PPS.",
+    "url": "https://www.youtube.com/results?search_query=pps+ireland+how+to",
+    "phone": "",
+    "address": "",
+    "is_official": false,
+    "country": "IE",
+    "locale": "pt-br",
+    "sort_order": 1,
+    "is_active": true,
+    "created_at": "2025-11-04T21:47:20.493Z",
+    "updated_at": "2025-11-04T21:47:20.493Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 9,
+  "fields": {
+    "section": "useful_links",
+    "title": "Book IRP (GNIB) — Dublin",
+    "description": "Book your first issuance or renewal of the Irish Residence Permit.",
+    "url": "https://www.gov.ie/en/department-of-justice-home-affairs-and-migration/services/how-to-get-an-irish-residence-permit/",
+    "phone": "",
+    "address": "",
+    "is_official": true,
+    "country": "IE",
+    "locale": "en",
+    "sort_order": 1,
+    "is_active": true,
+    "created_at": "2025-11-16T19:55:14.512Z",
+    "updated_at": "2025-11-16T19:55:14.512Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 10,
+  "fields": {
+    "section": "useful_links",
+    "title": "Reservar IRP (GNIB) — Dublín",
+    "description": "Reserva tu primera emisión o renovación del Irish Residence Permit.",
+    "url": "https://www.gov.ie/en/department-of-justice-home-affairs-and-migration/services/how-to-get-an-irish-residence-permit/",
+    "phone": "",
+    "address": "",
+    "is_official": true,
+    "country": "IE",
+    "locale": "es",
+    "sort_order": 1,
+    "is_active": true,
+    "created_at": "2025-11-16T19:55:14.518Z",
+    "updated_at": "2025-11-16T19:55:14.518Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 11,
+  "fields": {
+    "section": "useful_links",
+    "title": "Apply for PPS — MyWelfare",
+    "description": "Official page to apply for your PPS Number.",
+    "url": "https://www.mywelfare.ie/",
+    "phone": "",
+    "address": "",
+    "is_official": true,
+    "country": "IE",
+    "locale": "en",
+    "sort_order": 2,
+    "is_active": true,
+    "created_at": "2025-11-16T19:55:14.523Z",
+    "updated_at": "2025-11-16T19:55:14.523Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 12,
+  "fields": {
+    "section": "useful_links",
+    "title": "Solicitar PPS — MyWelfare",
+    "description": "Página oficial para solicitar tu PPS Number.",
+    "url": "https://www.mywelfare.ie/",
+    "phone": "",
+    "address": "",
+    "is_official": true,
+    "country": "IE",
+    "locale": "es",
+    "sort_order": 2,
+    "is_active": true,
+    "created_at": "2025-11-16T19:55:14.529Z",
+    "updated_at": "2025-11-16T19:55:14.529Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 13,
+  "fields": {
+    "section": "useful_links",
+    "title": "Leap Card (Adult/Student)",
+    "description": "Purchase, top up and information about the TFI Leap Card.",
+    "url": "https://about.leapcard.ie/",
+    "phone": "",
+    "address": "",
+    "is_official": true,
+    "country": "IE",
+    "locale": "en",
+    "sort_order": 3,
+    "is_active": true,
+    "created_at": "2025-11-16T19:55:14.535Z",
+    "updated_at": "2025-11-16T19:55:14.535Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 14,
+  "fields": {
+    "section": "useful_links",
+    "title": "Leap Card (Adult/Student)",
+    "description": "Compra, recarga e información sobre la TFI Leap Card.",
+    "url": "https://about.leapcard.ie/",
+    "phone": "",
+    "address": "",
+    "is_official": true,
+    "country": "IE",
+    "locale": "es",
+    "sort_order": 3,
+    "is_active": true,
+    "created_at": "2025-11-16T19:55:14.542Z",
+    "updated_at": "2025-11-16T19:55:14.542Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 15,
+  "fields": {
+    "section": "useful_links",
+    "title": "NDLS — Driving Licence",
+    "description": "Information about learner permits and full licences.",
+    "url": "https://www.ndls.ie/",
+    "phone": "",
+    "address": "",
+    "is_official": true,
+    "country": "IE",
+    "locale": "en",
+    "sort_order": 4,
+    "is_active": true,
+    "created_at": "2025-11-16T19:55:14.546Z",
+    "updated_at": "2025-11-16T19:55:14.546Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 16,
+  "fields": {
+    "section": "useful_links",
+    "title": "NDLS — Licencia de Conducir",
+    "description": "Información sobre learner permit y full licence.",
+    "url": "https://www.ndls.ie/",
+    "phone": "",
+    "address": "",
+    "is_official": true,
+    "country": "IE",
+    "locale": "es",
+    "sort_order": 4,
+    "is_active": true,
+    "created_at": "2025-11-16T19:55:14.550Z",
+    "updated_at": "2025-11-16T19:55:14.550Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 17,
+  "fields": {
+    "section": "how_to",
+    "title": "How to apply for PPS (step by step)",
+    "description": "1) Create an account on MyWelfare.\n2) Fill in the PPS application.\n3) Attach documents (ID, proof of address and reason).\n4) Follow the response by e-mail.",
+    "url": "https://www.gov.ie/en/service/12e6de-get-a-personal-public-service-pps-number/",
+    "phone": "",
+    "address": "",
+    "is_official": true,
+    "country": "IE",
+    "locale": "en",
+    "sort_order": 1,
+    "is_active": true,
+    "created_at": "2025-11-16T19:55:14.557Z",
+    "updated_at": "2025-11-16T19:55:14.557Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 18,
+  "fields": {
+    "section": "how_to",
+    "title": "Cómo solicitar el PPS (paso a paso)",
+    "description": "1) Crea una cuenta en MyWelfare.\n2) Rellena la solicitud de PPS.\n3) Adjunta documentos (identidad, comprobante de domicilio y motivo).\n4) Sigue la respuesta por correo electrónico.",
+    "url": "https://www.gov.ie/en/service/12e6de-get-a-personal-public-service-pps-number/",
+    "phone": "",
+    "address": "",
+    "is_official": true,
+    "country": "IE",
+    "locale": "es",
+    "sort_order": 1,
+    "is_active": true,
+    "created_at": "2025-11-16T19:55:14.560Z",
+    "updated_at": "2025-11-16T19:55:14.560Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 19,
+  "fields": {
+    "section": "phones",
+    "title": "Emergency — 112 / 999",
+    "description": "Police, fire brigade and ambulance.",
+    "url": "",
+    "phone": "112",
+    "address": "",
+    "is_official": false,
+    "country": "IE",
+    "locale": "en",
+    "sort_order": 1,
+    "is_active": true,
+    "created_at": "2025-11-16T19:55:14.563Z",
+    "updated_at": "2025-11-16T19:55:14.563Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 20,
+  "fields": {
+    "section": "phones",
+    "title": "Emergencia — 112 / 999",
+    "description": "Policía, bomberos y ambulancia.",
+    "url": "",
+    "phone": "112",
+    "address": "",
+    "is_official": false,
+    "country": "IE",
+    "locale": "es",
+    "sort_order": 1,
+    "is_active": true,
+    "created_at": "2025-11-16T19:55:14.565Z",
+    "updated_at": "2025-11-16T19:55:14.565Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 21,
+  "fields": {
+    "section": "addresses",
+    "title": "IRP (GNIB) — Dublin (Burgh Quay)",
+    "description": "",
+    "url": "https://maps.google.com/?q=Burgh+Quay+Dublin",
+    "phone": "",
+    "address": "13-14 Burgh Quay, Dublin 2, D02 XK70",
+    "is_official": false,
+    "country": "IE",
+    "locale": "en",
+    "sort_order": 1,
+    "is_active": true,
+    "created_at": "2025-11-16T19:55:14.571Z",
+    "updated_at": "2025-11-16T19:55:14.571Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 22,
+  "fields": {
+    "section": "addresses",
+    "title": "IRP (GNIB) — Dublín (Burgh Quay)",
+    "description": "",
+    "url": "https://maps.google.com/?q=Burgh+Quay+Dublin",
+    "phone": "",
+    "address": "13-14 Burgh Quay, Dublin 2, D02 XK70",
+    "is_official": false,
+    "country": "IE",
+    "locale": "es",
+    "sort_order": 1,
+    "is_active": true,
+    "created_at": "2025-11-16T19:55:14.576Z",
+    "updated_at": "2025-11-16T19:55:14.576Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 23,
+  "fields": {
+    "section": "videos",
+    "title": "PPS: practical tutorial",
+    "description": "Video explaining how to apply for the PPS.",
+    "url": "https://www.youtube.com/results?search_query=pps+ireland+how+to",
+    "phone": "",
+    "address": "",
+    "is_official": false,
+    "country": "IE",
+    "locale": "en",
+    "sort_order": 1,
+    "is_active": true,
+    "created_at": "2025-11-16T19:55:14.579Z",
+    "updated_at": "2025-11-16T19:55:14.579Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 24,
+  "fields": {
+    "section": "videos",
+    "title": "PPS: tutorial práctico",
+    "description": "Video que explica cómo solicitar el PPS.",
+    "url": "https://www.youtube.com/results?search_query=pps+ireland+how+to",
+    "phone": "",
+    "address": "",
+    "is_official": false,
+    "country": "IE",
+    "locale": "es",
+    "sort_order": 1,
+    "is_active": true,
+    "created_at": "2025-11-16T19:55:14.582Z",
+    "updated_at": "2025-11-16T19:55:14.582Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 27,
+  "fields": {
+    "section": "how_to",
+    "title": "Como solicitar o primeiro IRP (passo a passo):",
+    "description": "1 - Acesse o site oficial da ISD e vá ao “Registration” / “First-Time Registration”.\n2 - Crie a sua conta no “Customer Service Portal” — vai precisar de e-mail, número de telefone, e provavelmente endereço na Irlanda.\n3 - Depois de verificar a conta, agende o encontro no escritório de Burgh Quay para o “First-Time Registration”. Verifique os documentos que terá de levar (passaporte, prova de residência, etc). \n4 - Verifique que o seu endereço de residência está fixado (eles referem que acomodações temporárias podem causar problemas) no momento da marcação. \n5 - Guarde bem o comprovante da marcação — sem isso, não poderá entrar no escritório.\n6 - Se tiver dificuldades em marcar (slots insuficientes) — verifique na parte da manhã, assim que os slots são liberados.",
+    "url": "https://www.gov.ie/en/department-of-justice-home-affairs-and-migration/services/how-to-get-an-irish-residence-permit/",
+    "phone": "",
+    "address": "",
+    "is_official": true,
+    "country": "IE",
+    "locale": "pt-br",
+    "sort_order": 1,
+    "is_active": true,
+    "created_at": "2025-11-16T21:10:19.072Z",
+    "updated_at": "2025-11-16T21:10:19.072Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 28,
+  "fields": {
+    "section": "how_to",
+    "title": "How to apply for your first IRP (step by step):",
+    "description": "1 - Access the official ISD website and go to “Registration” / “First-Time Registration”.\n2 - Create your account in the “Customer Service Portal” — you will need an email, phone number, and probably an address in Ireland.\n3 - After verifying your account, schedule your appointment at the Burgh Quay office for the “First-Time Registration”. Check which documents you must bring (passport, proof of residence, etc).\n4 - Make sure your residential address is fixed (they mention that temporary accommodations may cause issues) at the time of booking.\n5 - Keep your appointment confirmation safe — without it, you will not be allowed to enter the office.\n6 - If you have difficulty booking (insufficient slots) — check in the morning, as soon as new slots are released.",
+    "url": "https://www.gov.ie/en/department-of-justice-home-affairs-and-migration/services/how-to-get-an-irish-residence-permit/",
+    "phone": "",
+    "address": "",
+    "is_official": true,
+    "country": "IE",
+    "locale": "en",
+    "sort_order": 1,
+    "is_active": true,
+    "created_at": "2025-11-16T21:20:08.426Z",
+    "updated_at": "2025-11-16T21:20:08.426Z"
+  }
+},
+{
+  "model": "catalog.resource",
+  "pk": 29,
+  "fields": {
+    "section": "how_to",
+    "title": "Cómo solicitar su primer IRP (paso a paso):",
+    "description": "1 - Acceda al sitio oficial de la ISD y vaya a “Registration” / “First-Time Registration”.\n2 - Cree su cuenta en el “Customer Service Portal” — necesitará un correo electrónico, número de teléfono y probablemente una dirección en Irlanda.\n3 - Después de verificar su cuenta, programe su cita en la oficina de Burgh Quay para el “First-Time Registration”. Verifique los documentos que debe llevar (pasaporte, comprobante de domicilio, etc).\n4 - Asegúrese de que su dirección residencial sea fija (indican que alojamientos temporales pueden causar problemas) al momento de la reserva.\n5 - Guarde bien la confirmación de su cita — sin ella no podrá ingresar a la oficina.\n6 - Si tiene dificultades para reservar (pocos horarios disponibles) — revise por la mañana, cuando se liberan los nuevos horarios.",
+    "url": "https://www.gov.ie/en/department-of-justice-home-affairs-and-migration/services/how-to-get-an-irish-residence-permit/",
+    "phone": "",
+    "address": "",
+    "is_official": true,
+    "country": "IE",
+    "locale": "es",
+    "sort_order": 1,
+    "is_active": true,
+    "created_at": "2025-11-16T21:20:24.545Z",
+    "updated_at": "2025-11-16T21:20:24.545Z"
+  }
+},
+{
+  "model": "catalog.clickevent",
+  "pk": 1,
+  "fields": {
+    "link": 1,
+    "locale": "pt-br",
+    "country": "IE",
+    "referrer": "http://127.0.0.1:8000/pt-br/IE/",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+    "created_at": "2025-11-16T20:04:22.908Z"
+  }
+},
+{
+  "model": "catalog.clickevent",
+  "pk": 2,
+  "fields": {
+    "link": 2,
+    "locale": "pt-br",
+    "country": "IE",
+    "referrer": "http://127.0.0.1:8000/pt-br/IE/",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+    "created_at": "2025-11-16T20:07:04.723Z"
+  }
+},
+{
+  "model": "catalog.clickevent",
+  "pk": 3,
+  "fields": {
+    "link": 3,
+    "locale": "pt-br",
+    "country": "IE",
+    "referrer": "http://127.0.0.1:8000/pt-br/IE/",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+    "created_at": "2025-11-16T20:07:29.678Z"
+  }
+},
+{
+  "model": "catalog.clickevent",
+  "pk": 4,
+  "fields": {
+    "link": 4,
+    "locale": "pt-br",
+    "country": "IE",
+    "referrer": "http://127.0.0.1:8000/pt-br/IE/",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+    "created_at": "2025-11-16T20:07:39.783Z"
+  }
+},
+{
+  "model": "catalog.clickevent",
+  "pk": 5,
+  "fields": {
+    "link": 5,
+    "locale": "pt-br",
+    "country": "IE",
+    "referrer": "http://127.0.0.1:8000/pt-br/IE/",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+    "created_at": "2025-11-16T20:07:51.043Z"
+  }
+},
+{
+  "model": "catalog.clickevent",
+  "pk": 6,
+  "fields": {
+    "link": 10,
+    "locale": "es",
+    "country": "IE",
+    "referrer": "http://127.0.0.1:8000/es/IE/",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+    "created_at": "2025-11-16T20:24:50.330Z"
+  }
+},
+{
+  "model": "catalog.clickevent",
+  "pk": 7,
+  "fields": {
+    "link": 10,
+    "locale": "es",
+    "country": "IE",
+    "referrer": "http://127.0.0.1:8000/es/IE/",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+    "created_at": "2025-11-16T20:25:07.271Z"
+  }
+},
+{
+  "model": "catalog.clickevent",
+  "pk": 8,
+  "fields": {
+    "link": 12,
+    "locale": "es",
+    "country": "IE",
+    "referrer": "http://127.0.0.1:8000/es/IE/",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+    "created_at": "2025-11-16T20:25:10.924Z"
+  }
+},
+{
+  "model": "catalog.clickevent",
+  "pk": 9,
+  "fields": {
+    "link": 14,
+    "locale": "es",
+    "country": "IE",
+    "referrer": "http://127.0.0.1:8000/es/IE/",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+    "created_at": "2025-11-16T20:25:15.301Z"
+  }
+},
+{
+  "model": "catalog.clickevent",
+  "pk": 10,
+  "fields": {
+    "link": 16,
+    "locale": "es",
+    "country": "IE",
+    "referrer": "http://127.0.0.1:8000/es/IE/",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+    "created_at": "2025-11-16T20:25:20.065Z"
+  }
+}
+]
