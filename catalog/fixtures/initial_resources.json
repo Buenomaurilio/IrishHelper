@@ -1,0 +1,119 @@
+[
+  {
+    "model": "catalog.resource",
+    "pk": 1,
+    "fields": {
+      "section": "useful_links",
+      "title": "Agendar IRP (GNIB) — Dublin",
+      "description": "Agende sua primeira emissão ou renovação do Irish Residence Permit.",
+      "url": "https://burghquayregistrationoffice.inis.gov.ie/",
+      "is_official": true,
+      "country": "IE",
+      "locale": "pt-br",
+      "sort_order": 1,
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.resource",
+    "pk": 2,
+    "fields": {
+      "section": "useful_links",
+      "title": "Solicitar PPS — MyWelfare",
+      "description": "Página oficial para solicitar o PPS Number.",
+      "url": "https://www.mywelfare.ie/",
+      "is_official": true,
+      "country": "IE",
+      "locale": "pt-br",
+      "sort_order": 2,
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.resource",
+    "pk": 3,
+    "fields": {
+      "section": "useful_links",
+      "title": "Leap Card (Adult/Student)",
+      "description": "Compra, recarga e informações do TFI Leap Card.",
+      "url": "https://about.leapcard.ie/",
+      "is_official": true,
+      "country": "IE",
+      "locale": "pt-br",
+      "sort_order": 3,
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.resource",
+    "pk": 4,
+    "fields": {
+      "section": "useful_links",
+      "title": "NDLS — Carteira de Motorista",
+      "description": "Informações sobre learner permit e full licence.",
+      "url": "https://www.ndls.ie/",
+      "is_official": true,
+      "country": "IE",
+      "locale": "pt-br",
+      "sort_order": 4,
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.resource",
+    "pk": 5,
+    "fields": {
+      "section": "how_to",
+      "title": "Como solicitar PPS (passo a passo)",
+      "description": "1) Crie conta no MyWelfare.\n2) Preencha a solicitação de PPS.\n3) Anexe documentos (identidade, comprovante de endereço e motivo).\n4) Acompanhe o retorno por e-mail.",
+      "url": "https://www.gov.ie/en/service/12e6de-get-a-personal-public-service-pps-number/",
+      "is_official": true,
+      "country": "IE",
+      "locale": "pt-br",
+      "sort_order": 1,
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.resource",
+    "pk": 6,
+    "fields": {
+      "section": "phones",
+      "title": "Emergência — 112 / 999",
+      "description": "Polícia, bombeiros e ambulância.",
+      "phone": "112",
+      "country": "IE",
+      "locale": "pt-br",
+      "sort_order": 1,
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.resource",
+    "pk": 7,
+    "fields": {
+      "section": "addresses",
+      "title": "IRP (GNIB) — Dublin (Burgh Quay)",
+      "address": "13-14 Burgh Quay, Dublin 2, D02 XK70",
+      "url": "https://maps.google.com/?q=Burgh+Quay+Dublin",
+      "country": "IE",
+      "locale": "pt-br",
+      "sort_order": 1,
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.resource",
+    "pk": 8,
+    "fields": {
+      "section": "videos",
+      "title": "PPS: tutorial prático",
+      "description": "Vídeo explicando a solicitação do PPS.",
+      "url": "https://www.youtube.com/results?search_query=pps+ireland+how+to",
+      "country": "IE",
+      "locale": "pt-br",
+      "sort_order": 1,
+      "is_active": true
+    }
+  }
+]
