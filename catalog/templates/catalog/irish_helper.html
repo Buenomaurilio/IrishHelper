@@ -9,31 +9,33 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <header class="sticky top-0 bg-white/80 backdrop-blur border-b">
-  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+  <div class="max-w-4xl mx-auto px-3 sm:px-4 py-3 flex flex-col gap-3">
 
-    <!-- ⬅️ Idioma + Botão (mesma linha) -->
+    <!-- Linha 1: título + bandeira -->
     <div class="flex items-center gap-2">
-      <select id="locale" class="border rounded px-2 py-1 text-sm">
-        <option value="pt-br" {% if locale == "pt-br" %}selected{% endif %}>Português</option>
-        <option value="en"    {% if locale == "en" %}selected{% endif %}>English</option>
-        <option value="es"    {% if locale == "es" %}selected{% endif %}>Español</option>
-      </select>
-
-      <button type="button" id="goLC" class="border px-3 py-1 rounded text-sm">
-        {% trans "Ir" %}
-      </button>
-    </div>
-
-    <!-- 🟢 Título centralizado -->
-    <div class="flex-1 flex items-center justify-center gap-2">
       <span class="text-lg">🇮🇪</span>
-      <h1 class="text-xl font-semibold text-center whitespace-nowrap">
+      <h1 class="text-lg sm:text-xl font-semibold leading-tight">
         {% trans "IrishHelper — Guia Rápido da Irlanda" %}
       </h1>
     </div>
 
-    <!-- Menu ➡️ no lado direito -->
-    <nav class="hidden sm:flex text-sm space-x-4 whitespace-nowrap">
+    <!-- Linha 2: idioma + botão (alinhado à esquerda no mobile, à direita no desktop) -->
+    <div class="flex items-center gap-2 justify-start sm:justify-between">
+      <div class="flex items-center gap-2">
+        <select id="locale" class="border rounded px-2 py-1 text-sm">
+          <option value="pt-br" {% if locale == "pt-br" %}selected{% endif %}>Português</option>
+          <option value="en"    {% if locale == "en" %}selected{% endif %}>English</option>
+          <option value="es"    {% if locale == "es" %}selected{% endif %}>Español</option>
+        </select>
+
+        <button type="button" id="goLC" class="border px-3 py-1 rounded text-sm">
+          {% trans "Ir" %}
+        </button>
+      </div>
+    </div>
+
+    <!-- Linha 3: menu – quebra em várias linhas no mobile, em linha única no desktop -->
+    <nav class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
       <a href="#uteis" class="hover:underline">{% trans "Links úteis" %}</a>
       <a href="#como" class="hover:underline">{% trans "Como solicitar" %}</a>
       <a href="#telefones" class="hover:underline">{% trans "Telefones" %}</a>
