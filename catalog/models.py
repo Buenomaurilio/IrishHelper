@@ -5,31 +5,23 @@ from django.db import models
 from django.utils import timezone
 
 
-class Section(models.TextChoices):
-    # Seções originais
-    USEFUL_LINKS = "useful_links", "Links úteis"
-    HOW_TO       = "how_to", "Como solicitar"
-    PHONES       = "phones", "Telefones úteis"
-    ADDRESSES    = "addresses", "Endereços"
-    VIDEOS       = "videos", "Vídeos"
+from django.db import models
+from django.utils import timezone
 
-    # NOVAS SEÇÕES
-    WHATSAPP_ACCOM = (
-        "whatsapp_accommodation",
-        "Grupos de WhatsApp (acomodação)"
-    )
-    JOB_SITES = (
-        "job_sites",
-        "Sites de emprego"
-    )
-    FB_JOBS_GROUP = (
-        "fb_jobs_group",
-        "Grupos de emprego (Facebook)"
-    )
-    DAILY_APPS = (
-        "daily_apps",
-        "Apps e serviços úteis"
-    )
+
+class Section(models.TextChoices):
+    USEFUL_LINKS = "useful_links", "Links úteis"
+    HOW_TO      = "how_to", "Como solicitar"
+    PHONES      = "phones", "Telefones úteis"
+    ADDRESSES   = "addresses", "Endereços"
+    VIDEOS      = "videos", "Vídeos"
+
+    # Novos blocos
+    WHATSAPP_ACCOMMODATION = "whatsapp_accommodation", "WhatsApp (acomodação)"
+    JOB_SITES    = "job_sites", "Sites de emprego"
+    JOB_FACEBOOK = "job_facebook", "Grupos de emprego (Facebook)"
+    UTILITY_APPS = "utility_apps", "Apps úteis"
+
 
 
 class Resource(models.Model):
