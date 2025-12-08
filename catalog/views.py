@@ -61,7 +61,7 @@ def irish_helper(request, locale="pt-br", country="IE"):
     # Empregos / Facebook / Apps – podem continuar usando base_qs
     job_sites = base_qs.filter(section=Section.JOB_SITES, country__in=["", country],)
 
-    job_facebook = base_qs.filter(section=Section.JOB_FACEBOOK, country__in=["", country],)
+    fb_jobs_group = base_qs.filter(section=Section.JOB_FACEBOOK, country__in=["", country],)
     
     daily_apps = base_qs.filter(section=Section.DAILY_APPS, country__in=["", country],)
 
@@ -78,7 +78,7 @@ def irish_helper(request, locale="pt-br", country="IE"):
         # novos blocos
         "whatsapp_groups":      whatsapp_groups,
         "job_sites":            job_sites,
-        "job_facebook":         job_facebook,
+        "fb_jobs_group":        fb_jobs_group,
         "daily_apps":           daily_apps,
 
         "ads": ads,
