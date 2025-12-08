@@ -18,13 +18,22 @@ from .models import Resource, Section, AdSlot
 
 
 
+from django.shortcuts import render
+from django.utils import timezone
+from django.db import models
+
+from .models import Resource, AdSlot, Section
+
+
 def irish_helper(request, locale="pt-br", country="IE"):
+    # todos os recursos ativos para o idioma atual
     qs = Resource.objects.filter(
         is_active=True,
         locale=locale,
     ).order_by("sort_order", "id")
 
     now = timezone.now()
+
     ads = AdSlot.objects.filter(
         is_active=True
     ).filter(
@@ -37,6 +46,8 @@ def irish_helper(request, locale="pt-br", country="IE"):
     ctx = {
         "locale": locale,
         "country": country,
+
+        # blocos antigos
         "useful_links": qs.filter(section=Section.USEFUL_LINKS),
         "how_to":       qs.filter(section=Section.HOW_TO),
         "phones":       qs.filter(section=Section.PHONES,    country__in=["", country]),
@@ -44,10 +55,23 @@ def irish_helper(request, locale="pt-br", country="IE"):
         "videos":       qs.filter(section=Section.VIDEOS),
 
         # NOVOS BLOCOS
-        "whatsapp_accom": qs.filter(section=Section.WHATSAPP_ACCOM),
-        "job_sites":      qs.filter(section=Section.JOB_SITES),
-        "fb_jobs_groups": qs.filter(section=Section.FB_JOBS_GROUP),
-        "daily_apps":     qs.filter(section=Section.DAILY_APPS),
+        # *** repara que o nome aqui bate com o do template ***
+        "whatsapp_groups": qs.filter(
+            section=Section.WHATSAPP_ACCOMMODATION,
+            country__in=["", country],
+        ),
+        "job_sites": qs.filter(
+            section=Section.JOB_SITES,
+            country__in=["", country],
+        ),
+        "job_facebook": qs.filter(
+            section=Section.JOB_FACEBOOK,
+            country__in=["", country],
+        ),
+        "utility_apps": qs.filter(
+            section=Section.UTILITY_APPS,
+            country__in=["", country],
+        ),
 
         "ads": {
             "hero":    [a for a in ads if a.position == "hero"],
@@ -55,6 +79,7 @@ def irish_helper(request, locale="pt-br", country="IE"):
             "footer":  [a for a in ads if a.position == "footer"],
         },
     }
+
     return render(request, "catalog/irish_helper.html", ctx)
 
 
