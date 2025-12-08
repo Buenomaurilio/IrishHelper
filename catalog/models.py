@@ -19,8 +19,8 @@ class Section(models.TextChoices):
     # Novos blocos
     WHATSAPP_ACCOMMODATION = "whatsapp_accommodation", "WhatsApp (acomodação)"
     JOB_SITES    = "job_sites", "Sites de emprego"
-    JOB_FACEBOOK = "job_facebook", "Grupos de emprego (Facebook)"
-    UTILITY_APPS = "utility_apps", "Apps úteis"
+    JOB_FACEBOOK = "fb_jobs_group", "Grupos de emprego (Facebook)"
+    DAILY_APPS   = "daily_apps", "Apps úteis"
 
 
 
