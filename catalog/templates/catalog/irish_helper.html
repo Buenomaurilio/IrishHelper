@@ -31,6 +31,9 @@
           <a href="#como" class="hover:underline">{% trans "Como solicitar" %}</a>
           <a href="#telefones" class="hover:underline">{% trans "Telefones" %}</a>
           <a href="#enderecos" class="hover:underline">{% trans "Endereços" %}</a>
+          <a href="#whatsapp" class="hover:underline">{% trans "WhatsApp" %}</a>
+          <a href="#jobs" class="hover:underline">{% trans "Empregos" %}</a>
+          <a href="#apps" class="hover:underline">{% trans "Apps úteis" %}</a>
           <a href="#videos" class="hover:underline">{% trans "Vídeos" %}</a>
         </nav>
       </div>
@@ -201,6 +204,157 @@
       </ul>
     </section>
 
+    <!-- WHATSAPP (ACOMODAÇÃO) -->
+    <section id="whatsapp" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm">
+      <h3 class="text-lg md:text-xl font-bold">
+        {% trans "Grupos de WhatsApp (acomodação)" %}
+      </h3>
+      <p class="text-xs md:text-sm text-gray-500 mt-1">
+        {% trans "Grupos para vagas de quarto, casa e acomodação na Irlanda." %}
+      </p>
+      <ul class="mt-4 grid gap-3">
+        {% for r in whatsapp_accommodation %}
+        <li class="p-3 md:p-4 border rounded-lg hover:bg-gray-50 transition">
+          <div class="flex items-center justify-between gap-3">
+            <div class="min-w-0">
+              <p class="font-medium text-sm md:text-base">
+                💬 {{ r.title }}
+              </p>
+              {% if r.description %}
+                <p class="text-xs md:text-sm text-gray-600 mt-0.5">{{ r.description }}</p>
+              {% endif %}
+            </div>
+            {% if r.url %}
+              <a href="{{ r.url }}"
+                 data-track="1"
+                 data-link-id="{{ r.id }}"
+                 data-href="{{ r.url }}"
+                 class="shrink-0 inline-flex items-center px-3 py-1.5 border rounded-lg text-xs md:text-sm">
+                {% trans "Entrar no grupo" %}
+              </a>
+            {% endif %}
+          </div>
+        </li>
+        {% empty %}
+          <p class="text-sm text-gray-500">
+            {% trans "Ainda não há grupos cadastrados." %}
+          </p>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <!-- EMPREGOS: SITES + FACEBOOK -->
+    <section id="jobs" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm space-y-6">
+      <h3 class="text-lg md:text-xl font-bold">
+        {% trans "Empregos na Irlanda" %}
+      </h3>
+
+      <!-- SITES DE EMPREGO -->
+      <div>
+        <h4 class="font-semibold text-sm md:text-base">
+          {% trans "Sites de emprego" %}
+        </h4>
+        <ul class="mt-3 grid gap-3">
+          {% for r in job_sites %}
+          <li class="p-3 md:p-4 border rounded-lg hover:bg-gray-50 transition">
+            <div class="flex items-center justify-between gap-3">
+              <div class="min-w-0">
+                <p class="font-medium text-sm md:text-base">{{ r.title }}</p>
+                {% if r.description %}
+                  <p class="text-xs md:text-sm text-gray-600 mt-0.5">{{ r.description }}</p>
+                {% endif %}
+              </div>
+              {% if r.url %}
+                <a href="{{ r.url }}"
+                   data-track="1"
+                   data-link-id="{{ r.id }}"
+                   data-href="{{ r.url }}"
+                   class="shrink-0 inline-flex items-center px-3 py-1.5 border rounded-lg text-xs md:text-sm">
+                  {% trans "Visitar site" %}
+                </a>
+              {% endif %}
+            </div>
+          </li>
+          {% empty %}
+            <p class="text-sm text-gray-500">
+              {% trans "Sem sites cadastrados." %}
+            </p>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- GRUPOS DE EMPREGO (FACEBOOK) -->
+      <div>
+        <h4 class="font-semibold text-sm md:text-base">
+          {% trans "Grupos de emprego (Facebook)" %}
+        </h4>
+        <ul class="mt-3 grid gap-3">
+          {% for r in fb_jobs %}
+          <li class="p-3 md:p-4 border rounded-lg hover:bg-gray-50 transition">
+            <div class="flex items-center justify-between gap-3">
+              <div class="min-w-0">
+                <p class="font-medium text-sm md:text-base">📘 {{ r.title }}</p>
+                {% if r.description %}
+                  <p class="text-xs md:text-sm text-gray-600 mt-0.5">{{ r.description }}</p>
+                {% endif %}
+              </div>
+              {% if r.url %}
+                <a href="{{ r.url }}"
+                   data-track="1"
+                   data-link-id="{{ r.id }}"
+                   data-href="{{ r.url }}"
+                   class="shrink-0 inline-flex items-center px-3 py-1.5 border rounded-lg text-xs md:text-sm">
+                  {% trans "Abrir grupo" %}
+                </a>
+              {% endif %}
+            </div>
+          </li>
+          {% empty %}
+            <p class="text-sm text-gray-500">
+              {% trans "Sem grupos de emprego cadastrados." %}
+            </p>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+
+    <!-- APPS E SERVIÇOS ÚTEIS -->
+    <section id="apps" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm">
+      <h3 class="text-lg md:text-xl font-bold">
+        {% trans "Apps e serviços úteis" %}
+      </h3>
+      <p class="text-xs md:text-sm text-gray-500 mt-1">
+        {% trans "Aplicativos e serviços que facilitam o dia a dia na Irlanda." %}
+      </p>
+      <ul class="mt-4 grid gap-3">
+        {% for r in daily_apps %}
+        <li class="p-3 md:p-4 border rounded-lg hover:bg-gray-50 transition">
+          <div class="flex items-center justify-between gap-3">
+            <div class="min-w-0">
+              <p class="font-medium text-sm md:text-base">{{ r.title }}</p>
+              {% if r.description %}
+                <p class="text-xs md:text-sm text-gray-600 mt-0.5">{{ r.description }}</p>
+              {% endif %}
+            </div>
+            {% if r.url %}
+              <a href="{{ r.url }}"
+                 data-track="1"
+                 data-link-id="{{ r.id }}"
+                 data-href="{{ r.url }}"
+                 class="shrink-0 inline-flex items-center px-3 py-1.5 border rounded-lg text-xs md:text-sm">
+                {% trans "Abrir app/site" %}
+              </a>
+            {% endif %}
+          </div>
+        </li>
+        {% empty %}
+          <p class="text-sm text-gray-500">
+            {% trans "Sem apps cadastrados." %}
+          </p>
+        {% endfor %}
+      </ul>
+    </section>
+
     <!-- VÍDEOS -->
     <section id="videos" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm">
       <h3 class="text-lg md:text-xl font-bold">{% trans "Vídeos recomendados" %}</h3>
@@ -222,7 +376,7 @@
   </main>
 
   {% if ads.footer %}
-  <footer class="max-w-4xl mx-auto px-3 sm:px-4 py-8 text-sm text-gray-500">
+  <footer class="max-w-4xl mx_auto px-3 sm:px-4 py-8 text-sm text-gray-500">
     <div class="grid sm:grid-cols-2 gap-4">
       {% for ad in ads.footer %}
       <div class="p-3 md:p-4 border rounded-lg">
