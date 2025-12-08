@@ -63,7 +63,7 @@ def irish_helper(request, locale="pt-br", country="IE"):
 
     job_facebook = base_qs.filter(section=Section.JOB_FACEBOOK,country__in=["", country],)
 
-    utility_apps = base_qs.filter(section=Section.UTILITY_APPS,country__in=["", country],)
+    daily_apps = base_qs.filter(section=Section.DAILY_APPS,country__in=["", country],)
 
     ctx = {
         "locale": locale,
@@ -79,7 +79,7 @@ def irish_helper(request, locale="pt-br", country="IE"):
         "whatsapp_groups":      whatsapp_groups,
         "job_sites":            job_sites,
         "job_facebook":         job_facebook,
-        "utility_apps":         utility_apps,
+        "daily_apps":           daily_apps,
 
         "ads": ads,
     }
