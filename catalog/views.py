@@ -17,46 +17,87 @@ from django.db import models
 from .models import Resource, Section, AdSlot
 
 
+
 def irish_helper(request, locale="pt-br", country="IE"):
-    # Ativa o idioma da interface
-    translation.activate(locale)
-    request.LANGUAGE_CODE = locale
+    qs = Resource.objects.filter(
+        is_active=True,
+        locale=locale,
+    ).order_by("sort_order", "id")
 
-    # 🔹 AGORA: só traz Resources do idioma selecionado
-    qs = (
-        Resource.objects
-        .filter(is_active=True, locale=locale)
-        .order_by("sort_order", "id")
-    )
-
-    # Anúncios (não estamos separando por idioma por enquanto)
     now = timezone.now()
-    ads_qs = (
-        AdSlot.objects.filter(is_active=True)
-        .filter(
-            models.Q(starts_at__isnull=True) | models.Q(starts_at__lte=now),
-            models.Q(ends_at__isnull=True)   | models.Q(ends_at__gte=now),
-        )
-        .order_by("position", "sort_order", "id")
-    )
-
-    ads = {
-        "hero":    [a for a in ads_qs if a.position == "hero"],
-        "sidebar": [a for a in ads_qs if a.position == "sidebar"],
-        "footer":  [a for a in ads_qs if a.position == "footer"],
-    }
+    ads = AdSlot.objects.filter(
+        is_active=True
+    ).filter(
+        models.Q(country="") | models.Q(country=country)
+    ).filter(
+        models.Q(starts_at__isnull=True) | models.Q(starts_at__lte=now),
+        models.Q(ends_at__isnull=True)   | models.Q(ends_at__gte=now),
+    ).order_by("position", "sort_order", "id")
 
     ctx = {
         "locale": locale,
-        "country": country,  # ainda mostramos na tela
+        "country": country,
         "useful_links": qs.filter(section=Section.USEFUL_LINKS),
         "how_to":       qs.filter(section=Section.HOW_TO),
-        "phones":       qs.filter(section=Section.PHONES),
-        "addresses":    qs.filter(section=Section.ADDRESSES),
+        "phones":       qs.filter(section=Section.PHONES,    country__in=["", country]),
+        "addresses":    qs.filter(section=Section.ADDRESSES, country__in=["", country]),
         "videos":       qs.filter(section=Section.VIDEOS),
-        "ads":          ads,
+
+        # NOVOS BLOCOS
+        "whatsapp_accom": qs.filter(section=Section.WHATSAPP_ACCOM),
+        "job_sites":      qs.filter(section=Section.JOB_SITES),
+        "fb_jobs_groups": qs.filter(section=Section.FB_JOBS_GROUP),
+        "daily_apps":     qs.filter(section=Section.DAILY_APPS),
+
+        "ads": {
+            "hero":    [a for a in ads if a.position == "hero"],
+            "sidebar": [a for a in ads if a.position == "sidebar"],
+            "footer":  [a for a in ads if a.position == "footer"],
+        },
     }
     return render(request, "catalog/irish_helper.html", ctx)
+
+
+# def irish_helper(request, locale="pt-br", country="IE"):
+#     # Ativa o idioma da interface
+#     translation.activate(locale)
+#     request.LANGUAGE_CODE = locale
+
+#     # 🔹 AGORA: só traz Resources do idioma selecionado
+#     qs = (
+#         Resource.objects
+#         .filter(is_active=True, locale=locale)
+#         .order_by("sort_order", "id")
+#     )
+
+#     # Anúncios (não estamos separando por idioma por enquanto)
+#     now = timezone.now()
+#     ads_qs = (
+#         AdSlot.objects.filter(is_active=True)
+#         .filter(
+#             models.Q(starts_at__isnull=True) | models.Q(starts_at__lte=now),
+#             models.Q(ends_at__isnull=True)   | models.Q(ends_at__gte=now),
+#         )
+#         .order_by("position", "sort_order", "id")
+#     )
+
+#     ads = {
+#         "hero":    [a for a in ads_qs if a.position == "hero"],
+#         "sidebar": [a for a in ads_qs if a.position == "sidebar"],
+#         "footer":  [a for a in ads_qs if a.position == "footer"],
+#     }
+
+#     ctx = {
+#         "locale": locale,
+#         "country": country,  # ainda mostramos na tela
+#         "useful_links": qs.filter(section=Section.USEFUL_LINKS),
+#         "how_to":       qs.filter(section=Section.HOW_TO),
+#         "phones":       qs.filter(section=Section.PHONES),
+#         "addresses":    qs.filter(section=Section.ADDRESSES),
+#         "videos":       qs.filter(section=Section.VIDEOS),
+#         "ads":          ads,
+#     }
+#     return render(request, "catalog/irish_helper.html", ctx)
 
 
 
