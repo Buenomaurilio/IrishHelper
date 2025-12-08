@@ -59,11 +59,11 @@ def irish_helper(request, locale="pt-br", country="IE"):
     whatsapp_groups = Resource.objects.filter(section=Section.WHATSAPP_ACCOMMODATION, is_active=True, country__in=["", country], ).order_by("sort_order", "id")
 
     # Empregos / Facebook / Apps – podem continuar usando base_qs
-    job_sites = base_qs.filter(section=Section.JOB_SITES,country__in=["", country],)
+    job_sites = base_qs.filter(section=Section.JOB_SITES, country__in=["", country],)
 
-    job_facebook = base_qs.filter(section=Section.JOB_FACEBOOK,country__in=["", country],)
-
-    daily_apps = base_qs.filter(section=Section.DAILY_APPS,country__in=["", country],)
+    job_facebook = base_qs.filter(section=Section.JOB_FACEBOOK, country__in=["", country],)
+    
+    daily_apps = base_qs.filter(section=Section.DAILY_APPS, country__in=["", country],)
 
     ctx = {
         "locale": locale,
