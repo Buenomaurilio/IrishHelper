@@ -56,27 +56,14 @@ def irish_helper(request, locale="pt-br", country="IE"):
 
     # WhatsApp: **NÃO** usa base_qs – só seção + país, porque os links
     # são os mesmos para qualquer idioma.
-    whatsapp_groups = Resource.objects.filter(
-        section=Section.WHATSAPP_ACCOMMODATION,
-        is_active=True,
-        country__in=["", country],
-    ).order_by("sort_order", "id")
+    whatsapp_groups = Resource.objects.filter(section=Section.WHATSAPP_ACCOMMODATION, is_active=True, country__in=["", country], ).order_by("sort_order", "id")
 
     # Empregos / Facebook / Apps – podem continuar usando base_qs
-    jobs_sites = base_qs.filter(
-        section=Section.JOB_SITES,
-        country__in=["", country],
-    )
+    job_sites = base_qs.filter(section=Section.JOB_SITES,country__in=["", country],)
 
-    job_facebook_groups = base_qs.filter(
-        section=Section.JOB_FACEBOOK_GROUPS,
-        country__in=["", country],
-    )
+    job_facebook = base_qs.filter(section=Section.JOB_FACEBOOK,country__in=["", country],)
 
-    daily_apps = base_qs.filter(
-        section=Section.DAILY_APPS,
-        country__in=["", country],
-    )
+    utility_apps = base_qs.filter(section=Section.UTILITY_APPS,country__in=["", country],)
 
     ctx = {
         "locale": locale,
@@ -90,9 +77,9 @@ def irish_helper(request, locale="pt-br", country="IE"):
 
         # novos blocos
         "whatsapp_groups":      whatsapp_groups,
-        "jobs_sites":           jobs_sites,
-        "job_facebook_groups":  job_facebook_groups,
-        "daily_apps":           daily_apps,
+        "job_sites":            job_sites,
+        "job_facebook":         job_facebook,
+        "utility_apps":         utility_apps,
 
         "ads": ads,
     }
