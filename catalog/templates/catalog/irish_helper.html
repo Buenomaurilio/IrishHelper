@@ -11,35 +11,21 @@
 <body class="bg-gray-50 text-gray-900">
   <!-- HEADER -->
   <header class="sticky top-0 bg-white/90 backdrop-blur border-b z-20">
-    <div class="max-w-4xl mx-auto px-3 sm:px-4 py-2.5
-                flex flex-col gap-2
-                md:flex-row md:items-center md:justify-between">
+    <!-- Linha principal: bandeira + título + idioma + botão / sanduíche -->
+    <div class="max-w-4xl mx-auto px-3 sm:px-4 py-2.5 flex items-center justify-between gap-2">
 
-      <!-- BLOCO ESQUERDO: bandeira + título + menu -->
-      <div class="flex flex-col gap-1 min-w-0">
-        <!-- linha 1: bandeira + título -->
-        <div class="flex items-center gap-2">
-          <span class="text-lg">🇮🇪</span>
-          <h1 class="text-base sm:text-lg md:text-xl font-semibold leading-tight">
-            {% trans "IrishHelper — Guia Rápido da Irlanda" %}
-          </h1>
-        </div>
-
-        <!-- linha 2: menu (quebra em várias linhas no mobile) -->
-        <nav class="flex flex-wrap gap-x-3 gap-y-1 text-xs sm:text-sm">
-          <a href="#uteis" class="hover:underline">{% trans "Links úteis" %}</a>
-          <a href="#como" class="hover:underline">{% trans "Como solicitar" %}</a>
-          <a href="#telefones" class="hover:underline">{% trans "Telefones" %}</a>
-          <a href="#enderecos" class="hover:underline">{% trans "Endereços" %}</a>
-          <a href="#whatsapp" class="hover:underline">{% trans "WhatsApp" %}</a>
-          <a href="#jobs" class="hover:underline">{% trans "Empregos" %}</a>
-          <a href="#apps" class="hover:underline">{% trans "Apps úteis" %}</a>
-          <a href="#videos" class="hover:underline">{% trans "Vídeos" %}</a>
-        </nav>
+      <!-- ESQUERDA: bandeira + título -->
+      <div class="flex items-center gap-2 min-w-0">
+        <span class="text-lg">🇮🇪</span>
+        <h1 class="text-base sm:text-lg md:text-xl font-semibold leading-tight truncate">
+          {% trans "IrishHelper — Guia Rápido da Irlanda" %}
+        </h1>
       </div>
 
-      <!-- BLOCO DIREITO: seletor de idioma + botão -->
-      <div class="flex items-center gap-2 justify-start md:justify-end mt-1 md:mt-0">
+      <!-- DIREITA: seletor de idioma + Go + menu sanduíche no mobile -->
+      <div class="flex items-center gap-2">
+
+        <!-- seletor de idioma (sempre visível) -->
         <select id="locale" class="border rounded px-2 py-1 text-xs sm:text-sm">
           <option value="pt-br" {% if locale == "pt-br" %}selected{% endif %}>Português</option>
           <option value="en"    {% if locale == "en" %}selected{% endif %}>English</option>
@@ -48,13 +34,90 @@
 
         <button type="button"
                 id="goLC"
+                class="border px-3 py-1 rounded text-xs sm:text-sm hidden sm:inline-block">
+          {% trans "Ir" %}
+        </button>
+
+        <!-- BOTÃO SANDUÍCHE (só mobile) -->
+        <button id="mobileMenuBtn"
+                class="md:hidden text-xl px-2 py-1 border rounded ml-1">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- MENU DESKTOP (fica logo abaixo, só md+) -->
+    <div class="hidden md:block border-t border-gray-100">
+      <nav class="max-w-4xl mx-auto px-3 sm:px-4 py-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+        <a href="#uteis" class="hover:underline">{% trans "Links úteis" %}</a>
+        <a href="#como" class="hover:underline">{% trans "Como solicitar" %}</a>
+        <a href="#telefones" class="hover:underline">{% trans "Telefones" %}</a>
+        <a href="#enderecos" class="hover:underline">{% trans "Endereços" %}</a>
+        <a href="#whatsapp" class="hover:underline">{% trans "WhatsApp" %}</a>
+        <a href="#jobs" class="hover:underline">{% trans "Empregos" %}</a>
+        <a href="#apps" class="hover:underline">{% trans "Apps úteis" %}</a>
+        <a href="#videos" class="hover:underline">{% trans "Vídeos" %}</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MENU MOBILE (DRAWER) -->
+  <div id="mobileMenu" class="fixed inset-0 z-30 hidden md:hidden">
+    <!-- fundo escurecido -->
+    <div id="mobileMenuOverlay" class="absolute inset-0 bg-black/40"></div>
+
+    <!-- painel principal -->
+    <div class="absolute top-0 left-0 right-0 bg-white rounded-b-2xl shadow-lg p-4 pb-5">
+      <div class="flex items-center justify-between mb-3">
+        <div class="flex items-center gap-2">
+          <span class="text-lg">🇮🇪</span>
+          <span class="font-semibold text-sm">
+            {% trans "IrishHelper — Guia Rápido da Irlanda" %}
+          </span>
+        </div>
+        <button id="mobileMenuClose" class="text-lg px-2 py-1">
+          ✕
+        </button>
+      </div>
+
+      <!-- mesma navegação, em coluna -->
+      <nav class="flex flex-col gap-2 text-sm">
+        <a href="#uteis" data-mobile-nav-link class="py-1 border-b border-gray-100 hover:bg-gray-50 rounded px-1">
+          {% trans "Links úteis" %}
+        </a>
+        <a href="#como" data-mobile-nav-link class="py-1 border-b border-gray-100 hover:bg-gray-50 rounded px-1">
+          {% trans "Como solicitar" %}
+        </a>
+        <a href="#telefones" data-mobile-nav-link class="py-1 border-b border-gray-100 hover:bg-gray-50 rounded px-1">
+          {% trans "Telefones" %}
+        </a>
+        <a href="#enderecos" data-mobile-nav-link class="py-1 border-b border-gray-100 hover:bg-gray-50 rounded px-1">
+          {% trans "Endereços" %}
+        </a>
+        <a href="#whatsapp" data-mobile-nav-link class="py-1 border-b border-gray-100 hover:bg-gray-50 rounded px-1">
+          {% trans "WhatsApp" %}
+        </a>
+        <a href="#jobs" data-mobile-nav-link class="py-1 border-b border-gray-100 hover:bg-gray-50 rounded px-1">
+          {% trans "Empregos" %}
+        </a>
+        <a href="#apps" data-mobile-nav-link class="py-1 border-b border-gray-100 hover:bg-gray-50 rounded px-1">
+          {% trans "Apps úteis" %}
+        </a>
+        <a href="#videos" data-mobile-nav-link class="py-1 hover:bg-gray-50 rounded px-1">
+          {% trans "Vídeos" %}
+        </a>
+      </nav>
+
+      <!-- botão Go também dentro do menu (opcional) -->
+      <div class="mt-4 flex justify-end">
+        <button type="button"
+                id="goLCMobile"
                 class="border px-3 py-1 rounded text-xs sm:text-sm">
           {% trans "Ir" %}
         </button>
       </div>
-
     </div>
-  </header>
+  </div>
 
   <!-- CONTEÚDO -->
   <main class="max-w-4xl mx-auto px-3 sm:px-4 py-6 md:py-8 space-y-6 md:space-y-10">
@@ -289,7 +352,7 @@
           {% trans "Grupos de emprego (Facebook)" %}
         </h4>
         <ul class="mt-3 grid gap-3">
-          {% for r in fb_jobs_group %}
+          {% for r in job_facebook %}
           <li class="p-3 md:p-4 border rounded-lg hover:bg-gray-50 transition">
             <div class="flex items-center justify-between gap-3">
               <div class="min-w-0">
@@ -376,7 +439,7 @@
   </main>
 
   {% if ads.footer %}
-  <footer class="max-w-4xl mx_auto px-3 sm:px-4 py-8 text-sm text-gray-500">
+  <footer class="max-w-4xl mx-auto px-3 sm:px-4 py-8 text-sm text-gray-500">
     <div class="grid sm:grid-cols-2 gap-4">
       {% for ad in ads.footer %}
       <div class="p-3 md:p-4 border rounded-lg">
@@ -425,12 +488,58 @@
     });
   </script>
 
-  <!-- BOTÃO DE IDIOMA -->
+  <!-- BOTÃO DE IDIOMA (desktop + mobile) -->
   <script>
-    document.getElementById("goLC").addEventListener("click", () => {
+    function goToLocale() {
       const loc = document.getElementById("locale").value;
       const url = `/${loc}/IE/`;
       window.location.href = url;
+    }
+
+    const goLC = document.getElementById("goLC");
+    if (goLC) {
+      goLC.addEventListener("click", goToLocale);
+    }
+
+    const goLCMobile = document.getElementById("goLCMobile");
+    if (goLCMobile) {
+      goLCMobile.addEventListener("click", goToLocale);
+    }
+  </script>
+
+  <!-- MENU MOBILE JS -->
+  <script>
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu    = document.getElementById("mobileMenu");
+    const mobileClose   = document.getElementById("mobileMenuClose");
+    const mobileOverlay = document.getElementById("mobileMenuOverlay");
+
+    function closeMobileMenu() {
+      mobileMenu.classList.add("hidden");
+    }
+    function openMobileMenu() {
+      mobileMenu.classList.remove("hidden");
+    }
+
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener("click", () => {
+        if (mobileMenu.classList.contains("hidden")) {
+          openMobileMenu();
+        } else {
+          closeMobileMenu();
+        }
+      });
+    }
+    if (mobileClose) {
+      mobileClose.addEventListener("click", closeMobileMenu);
+    }
+    if (mobileOverlay) {
+      mobileOverlay.addEventListener("click", closeMobileMenu);
+    }
+
+    // fecha menu ao clicar em qualquer link do próprio menu
+    document.querySelectorAll("[data-mobile-nav-link]").forEach((el) => {
+      el.addEventListener("click", closeMobileMenu);
     });
   </script>
 </body>
