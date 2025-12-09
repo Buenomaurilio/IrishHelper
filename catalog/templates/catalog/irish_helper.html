@@ -7,75 +7,58 @@
   <title>{% trans "IrishHelper — Guia para imigrantes na Irlanda" %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- AJUSTE GLOBAL DE ESCALA PARA MOBILE (~85% de zoom) -->
-  <style>
-    @media (max-width: 640px) {
-      html {
-        font-size: 14px; /* 14px em vez de 16px ≈ 87.5% */
-      }
-      header h1 {
-        font-size: 0.9rem; /* título um pouco menor no mobile */
-      }
-      #locale {
-        max-width: 6.5rem; /* evita o select muito largo no mobile */
-      }
-    }
-  </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
+
   <!-- HEADER -->
   <header class="sticky top-0 bg-white/90 backdrop-blur border-b z-20">
-    <!-- WRAPPER PRINCIPAL: empilha no mobile, alinha em coluna -->
-    <div class="max-w-4xl mx-auto px-3 sm:px-4 py-2.5 flex flex-col gap-1">
+    <div class="max-w-4xl mx-auto px-3 sm:px-4 py-2.5">
 
-      <!-- LINHA 1: bandeira + título -->
-      <div class="flex items-center gap-2 min-w-0">
-        <span class="text-lg">🇮🇪</span>
-        <h1 class="text-sm sm:text-lg md:text-xl font-semibold leading-tight truncate">
-          {% trans "IrishHelper — Guia Rápido da Irlanda" %}
-        </h1>
+      <!-- LINHA 1: bandeira + título + seletor de idioma -->
+      <div class="flex items-center justify-between gap-2 whitespace-nowrap">
+        <!-- ESQUERDA: bandeira + título -->
+        <div class="flex items-center gap-2 min-w-0">
+          <span class="text-lg">🇮🇪</span>
+          <h1 class="text-xs sm:text-lg md:text-xl font-semibold leading-tight truncate max-w-[60vw]">
+            {% trans "IrishHelper — Quick Guide to Ireland" %}
+          </h1>
+        </div>
+
+        <!-- DIREITA: seletor de idioma (sempre visível) -->
+        <select
+          id="locale"
+          class="border rounded px-2 py-1 text-[11px] sm:text-sm leading-none flex-shrink-0"
+        >
+          <option value="pt-br" {% if locale == "pt-br" %}selected{% endif %}>Português</option>
+          <option value="en"    {% if locale == "en" %}selected{% endif %}>English</option>
+          <option value="es"    {% if locale == "es" %}selected{% endif %}>Español</option>
+        </select>
       </div>
 
-      <!-- LINHA 2: menu sanduíche (esquerda) + idioma (direita) -->
-      <div class="flex items-center justify-between gap-2">
-
+      <!-- LINHA 2: sanduíche no mobile + menu desktop -->
+      <div class="mt-2 flex items-center justify-between">
         <!-- BOTÃO SANDUÍCHE (só mobile) -->
-        <button id="mobileMenuBtn"
-                class="md:hidden text-xl px-2 py-1 border rounded">
+        <button
+          id="mobileMenuBtn"
+          class="inline-flex md:hidden items-center justify-center text-xl px-2 py-1 border rounded"
+          aria-label="Menu"
+        >
           ☰
         </button>
 
-        <!-- seletor de idioma (sempre visível) -->
-        <div class="flex items-center gap-2 justify-end flex-1">
-          <select id="locale"
-                  class="border rounded px-1.5 py-1 text-xs sm:text-sm w-24 sm:w-auto">
-            <option value="pt-br" {% if locale == "pt-br" %}selected{% endif %}>Português</option>
-            <option value="en"    {% if locale == "en" %}selected{% endif %}>English</option>
-            <option value="es"    {% if locale == "es" %}selected{% endif %}>Español</option>
-          </select>
-
-          <button type="button"
-                  id="goLC"
-                  class="border px-3 py-1 rounded text-xs sm:text-sm hidden sm:inline-block">
-            {% trans "Ir" %}
-          </button>
-        </div>
+        <!-- MENU DESKTOP (só md+) -->
+        <nav class="hidden md:flex flex-wrap gap-x-4 gap-y-1 text-sm ml-auto">
+          <a href="#uteis"      class="hover:underline">{% trans "Useful links" %}</a>
+          <a href="#como"       class="hover:underline">{% trans "How to apply" %}</a>
+          <a href="#telefones"  class="hover:underline">{% trans "Phone numbers" %}</a>
+          <a href="#enderecos"  class="hover:underline">{% trans "Addresses" %}</a>
+          <a href="#whatsapp"   class="hover:underline">WhatsApp</a>
+          <a href="#jobs"       class="hover:underline">{% trans "Jobs" %}</a>
+          <a href="#apps"       class="hover:underline">{% trans "Useful apps" %}</a>
+          <a href="#videos"     class="hover:underline">{% trans "Videos" %}</a>
+        </nav>
       </div>
-    </div>
 
-    <!-- MENU DESKTOP (fica logo abaixo, só md+) -->
-    <div class="hidden md:block border-t border-gray-100">
-      <nav class="max-w-4xl mx-auto px-3 sm:px-4 py-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">
-        <a href="#uteis" class="hover:underline">{% trans "Links úteis" %}</a>
-        <a href="#como" class="hover:underline">{% trans "Como solicitar" %}</a>
-        <a href="#telefones" class="hover:underline">{% trans "Telefones" %}</a>
-        <a href="#enderecos" class="hover:underline">{% trans "Endereços" %}</a>
-        <a href="#whatsapp" class="hover:underline">{% trans "WhatsApp" %}</a>
-        <a href="#jobs" class="hover:underline">{% trans "Empregos" %}</a>
-        <a href="#apps" class="hover:underline">{% trans "Apps úteis" %}</a>
-        <a href="#videos" class="hover:underline">{% trans "Vídeos" %}</a>
-      </nav>
     </div>
   </header>
 
@@ -90,48 +73,48 @@
         <div class="flex items-center gap-2">
           <span class="text-lg">🇮🇪</span>
           <span class="font-semibold text-sm">
-            {% trans "IrishHelper — Guia Rápido da Irlanda" %}
+            {% trans "IrishHelper — Quick Guide to Ireland" %}
           </span>
         </div>
-        <button id="mobileMenuClose" class="text-lg px-2 py-1">
-          ✕
-        </button>
+        <button id="mobileMenuClose" class="text-lg px-2 py-1">✕</button>
       </div>
 
-      <!-- navegação em coluna -->
+      <!-- mesma navegação, em coluna -->
       <nav class="flex flex-col gap-2 text-sm">
-        <a href="#uteis" data-mobile-nav-link class="py-1 border-b border-gray-100 hover:bg-gray-50 rounded px-1">
-          {% trans "Links úteis" %}
+        <a href="#uteis"     data-mobile-nav-link class="py-1 border-b border-gray-100 hover:bg-gray-50 rounded px-1">
+          {% trans "Useful links" %}
         </a>
-        <a href="#como" data-mobile-nav-link class="py-1 border-b border-gray-100 hover:bg-gray-50 rounded px-1">
-          {% trans "Como solicitar" %}
+        <a href="#como"      data-mobile-nav-link class="py-1 border-b border-gray-100 hover:bg-gray-50 rounded px-1">
+          {% trans "How to apply" %}
         </a>
         <a href="#telefones" data-mobile-nav-link class="py-1 border-b border-gray-100 hover:bg-gray-50 rounded px-1">
-          {% trans "Telefones" %}
+          {% trans "Phone numbers" %}
         </a>
         <a href="#enderecos" data-mobile-nav-link class="py-1 border-b border-gray-100 hover:bg-gray-50 rounded px-1">
-          {% trans "Endereços" %}
+          {% trans "Addresses" %}
         </a>
-        <a href="#whatsapp" data-mobile-nav-link class="py-1 border-b border-gray-100 hover:bg-gray-50 rounded px-1">
-          {% trans "WhatsApp" %}
+        <a href="#whatsapp"  data-mobile-nav-link class="py-1 border-b border-gray-100 hover:bg-gray-50 rounded px-1">
+          WhatsApp
         </a>
-        <a href="#jobs" data-mobile-nav-link class="py-1 border-b border-gray-100 hover:bg-gray-50 rounded px-1">
-          {% trans "Empregos" %}
+        <a href="#jobs"      data-mobile-nav-link class="py-1 border-b border-gray-100 hover:bg-gray-50 rounded px-1">
+          {% trans "Jobs" %}
         </a>
-        <a href="#apps" data-mobile-nav-link class="py-1 border-b border-gray-100 hover:bg-gray-50 rounded px-1">
-          {% trans "Apps úteis" %}
+        <a href="#apps"      data-mobile-nav-link class="py-1 border-b border-gray-100 hover:bg-gray-50 rounded px-1">
+          {% trans "Useful apps" %}
         </a>
-        <a href="#videos" data-mobile-nav-link class="py-1 hover:bg-gray-50 rounded px-1">
-          {% trans "Vídeos" %}
+        <a href="#videos"    data-mobile-nav-link class="py-1 hover:bg-gray-50 rounded px-1">
+          {% trans "Videos" %}
         </a>
       </nav>
 
-      <!-- botão Go também dentro do menu -->
+      <!-- botão Go também dentro do menu (opcional) -->
       <div class="mt-4 flex justify-end">
-        <button type="button"
-                id="goLCMobile"
-                class="border px-3 py-1 rounded text-xs sm:text-sm">
-          {% trans "Ir" %}
+        <button
+          type="button"
+          id="goLCMobile"
+          class="border px-3 py-1 rounded text-xs sm:text-sm"
+        >
+          {% trans "Go" %}
         </button>
       </div>
     </div>
@@ -162,19 +145,19 @@
     <!-- HERO -->
     <section class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm">
       <h2 class="text-xl md:text-2xl font-bold">
-        {% trans "Tudo em um só lugar" %}
+        {% trans "All in one place" %}
       </h2>
       <p class="mt-2 text-sm md:text-base text-gray-600">
-        {% trans "Imigração (GNIB), PPS, Leap Card, Carteira de motorista (NDLS) e mais — links oficiais, passo a passo, telefones e endereços." %}
+        {% trans "Immigration (GNIB), PPS, Leap Card, Driver’s Licence (NDLS) and more — official links, step-by-step guides, phone numbers and addresses." %}
       </p>
       <p class="text-xs md:text-sm text-gray-500 mt-2">
-        {% blocktrans %}Idioma: {{ locale }} | País: {{ country }}{% endblocktrans %}
+        {% blocktrans %}Language: {{ locale }} | Country: {{ country }}{% endblocktrans %}
       </p>
     </section>
 
     <!-- LINKS ÚTEIS -->
     <section id="uteis" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm">
-      <h3 class="text-lg md:text-xl font-bold">{% trans "Links úteis" %}</h3>
+      <h3 class="text-lg md:text-xl font-bold">{% trans "Useful links" %}</h3>
       <ul class="mt-4 grid gap-3">
         {% for r in useful_links %}
         <li class="p-3 md:p-4 border rounded-lg hover:bg-gray-50 transition">
@@ -184,7 +167,7 @@
                 {{ r.title }}
                 {% if r.is_official %}
                   <span class="text-[10px] md:text-xs px-2 py-0.5 border rounded ml-2">
-                    {% trans "Oficial" %}
+                    {% trans "Official" %}
                   </span>
                 {% endif %}
               </p>
@@ -198,20 +181,20 @@
                  data-link-id="{{ r.id }}"
                  data-href="{{ r.url }}"
                  class="shrink-0 inline-flex items-center px-3 py-1.5 border rounded-lg text-xs md:text-sm">
-                {% trans "Acessar" %}
+                {% trans "Open" %}
               </a>
             {% endif %}
           </div>
         </li>
         {% empty %}
-          <p class="text-sm text-gray-500">{% trans "Sem itens ainda." %}</p>
+          <p class="text-sm text-gray-500">{% trans "No items yet." %}</p>
         {% endfor %}
       </ul>
     </section>
 
     <!-- COMO SOLICITAR -->
     <section id="como" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm">
-      <h3 class="text-lg md:text-xl font-bold">{% trans "Como e onde solicitar" %}</h3>
+      <h3 class="text-lg md:text-xl font-bold">{% trans "How and where to apply" %}</h3>
       <div class="mt-4 space-y-3 md:space-y-4">
         {% for r in how_to %}
         <article class="p-3 md:p-4 border rounded-lg">
@@ -227,19 +210,19 @@
                data-link-id="{{ r.id }}"
                data-href="{{ r.url }}"
                class="mt-2 inline-flex items-center px-3 py-1.5 border rounded-lg text-xs md:text-sm">
-              {% trans "Mais detalhes" %}
+              {% trans "More details" %}
             </a>
           {% endif %}
         </article>
         {% empty %}
-          <p class="text-sm text-gray-500">{% trans "Sem guias ainda." %}</p>
+          <p class="text-sm text-gray-500">{% trans "No guides yet." %}</p>
         {% endfor %}
       </div>
     </section>
 
     <!-- TELEFONES -->
     <section id="telefones" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm">
-      <h3 class="text-lg md:text-xl font-bold">{% trans "Telefones úteis" %}</h3>
+      <h3 class="text-lg md:text-xl font-bold">{% trans "Phone numbers" %}</h3>
       <ul class="mt-3 grid gap-3 text-sm">
         {% for r in phones %}
         <li class="p-3 md:p-4 border rounded-lg">
@@ -254,14 +237,14 @@
           {% endif %}
         </li>
         {% empty %}
-          <p class="text-sm text-gray-500">{% trans "Sem telefones." %}</p>
+          <p class="text-sm text-gray-500">{% trans "No phone numbers." %}</p>
         {% endfor %}
       </ul>
     </section>
 
     <!-- ENDEREÇOS -->
     <section id="enderecos" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm">
-      <h3 class="text-lg md:text-xl font-bold">{% trans "Endereços" %}</h3>
+      <h3 class="text-lg md:text-xl font-bold">{% trans "Addresses" %}</h3>
       <ul class="mt-3 grid gap-3 text-sm">
         {% for r in addresses %}
         <li class="p-3 md:p-4 border rounded-lg">
@@ -275,12 +258,12 @@
                data-link-id="{{ r.id }}"
                data-href="{{ r.url }}"
                class="mt-1 inline-flex items-center px-3 py-1.5 border rounded-lg text-xs md:text-sm">
-              {% trans "Abrir no mapa" %}
+              {% trans "Open on map." %}
             </a>
           {% endif %}
         </li>
         {% empty %}
-          <p class="text-sm text-gray-500">{% trans "Sem endereços." %}</p>
+          <p class="text-sm text-gray-500">{% trans "No addresses." %}</p>
         {% endfor %}
       </ul>
     </section>
@@ -288,10 +271,10 @@
     <!-- WHATSAPP (ACOMODAÇÃO) -->
     <section id="whatsapp" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm">
       <h3 class="text-lg md:text-xl font-bold">
-        {% trans "Grupos de WhatsApp (acomodação)" %}
+        {% trans "WhatsApp groups (accommodation)" %}
       </h3>
       <p class="text-xs md:text-sm text-gray-500 mt-1">
-        {% trans "Grupos para vagas de quarto, casa e acomodação na Irlanda." %}
+        {% trans "Groups for room, house and accommodation offers in Ireland." %}
       </p>
       <ul class="mt-4 grid gap-3">
         {% for r in whatsapp_groups %}
@@ -311,14 +294,14 @@
                  data-link-id="{{ r.id }}"
                  data-href="{{ r.url }}"
                  class="shrink-0 inline-flex items-center px-3 py-1.5 border rounded-lg text-xs md:text-sm">
-                {% trans "Entrar no grupo" %}
+                {% trans "Join group" %}
               </a>
             {% endif %}
           </div>
         </li>
         {% empty %}
           <p class="text-sm text-gray-500">
-            {% trans "Ainda não há grupos cadastrados." %}
+            {% trans "No groups yet." %}
           </p>
         {% endfor %}
       </ul>
@@ -327,13 +310,13 @@
     <!-- EMPREGOS: SITES + FACEBOOK -->
     <section id="jobs" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm space-y-6">
       <h3 class="text-lg md:text-xl font-bold">
-        {% trans "Empregos na Irlanda" %}
+        {% trans "Jobs in Ireland" %}
       </h3>
 
       <!-- SITES DE EMPREGO -->
       <div>
         <h4 class="font-semibold text-sm md:text-base">
-          {% trans "Sites de emprego" %}
+          {% trans "Job sites" %}
         </h4>
         <ul class="mt-3 grid gap-3">
           {% for r in job_sites %}
@@ -351,14 +334,14 @@
                    data-link-id="{{ r.id }}"
                    data-href="{{ r.url }}"
                    class="shrink-0 inline-flex items-center px-3 py-1.5 border rounded-lg text-xs md:text-sm">
-                  {% trans "Visitar site" %}
+                  {% trans "Visit site" %}
                 </a>
               {% endif %}
             </div>
           </li>
           {% empty %}
             <p class="text-sm text-gray-500">
-              {% trans "Sem sites cadastrados." %}
+              {% trans "No job sites." %}
             </p>
           {% endfor %}
         </ul>
@@ -367,7 +350,7 @@
       <!-- GRUPOS DE EMPREGO (FACEBOOK) -->
       <div>
         <h4 class="font-semibold text-sm md:text-base">
-          {% trans "Grupos de emprego (Facebook)" %}
+          {% trans "Job groups (Facebook)" %}
         </h4>
         <ul class="mt-3 grid gap-3">
           {% for r in job_facebook %}
@@ -385,14 +368,14 @@
                    data-link-id="{{ r.id }}"
                    data-href="{{ r.url }}"
                    class="shrink-0 inline-flex items-center px-3 py-1.5 border rounded-lg text-xs md:text-sm">
-                  {% trans "Abrir grupo" %}
+                  {% trans "Open group" %}
                 </a>
               {% endif %}
             </div>
           </li>
           {% empty %}
             <p class="text-sm text-gray-500">
-              {% trans "Sem grupos de emprego cadastrados." %}
+              {% trans "No job groups." %}
             </p>
           {% endfor %}
         </ul>
@@ -402,10 +385,10 @@
     <!-- APPS E SERVIÇOS ÚTEIS -->
     <section id="apps" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm">
       <h3 class="text-lg md:text-xl font-bold">
-        {% trans "Apps e serviços úteis" %}
+        {% trans "Useful apps and services" %}
       </h3>
       <p class="text-xs md:text-sm text-gray-500 mt-1">
-        {% trans "Aplicativos e serviços que facilitam o dia a dia na Irlanda." %}
+        {% trans "Apps and services that make daily life in Ireland easier." %}
       </p>
       <ul class="mt-4 grid gap-3">
         {% for r in daily_apps %}
@@ -423,14 +406,14 @@
                  data-link-id="{{ r.id }}"
                  data-href="{{ r.url }}"
                  class="shrink-0 inline-flex items-center px-3 py-1.5 border rounded-lg text-xs md:text-sm">
-                {% trans "Abrir app/site" %}
+                {% trans "Open app/site" %}
               </a>
             {% endif %}
           </div>
         </li>
         {% empty %}
           <p class="text-sm text-gray-500">
-            {% trans "Sem apps cadastrados." %}
+            {% trans "No apps yet." %}
           </p>
         {% endfor %}
       </ul>
@@ -438,7 +421,7 @@
 
     <!-- VÍDEOS -->
     <section id="videos" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm">
-      <h3 class="text-lg md:text-xl font-bold">{% trans "Vídeos recomendados" %}</h3>
+      <h3 class="text-lg md:text-xl font-bold">{% trans "Recommended videos" %}</h3>
       <div class="mt-3 grid gap-3 sm:grid-cols-2">
         {% for r in videos %}
         <a class="block p-3 md:p-4 border rounded-lg hover:bg-gray-50 transition"
@@ -449,7 +432,7 @@
           {% endif %}
         </a>
         {% empty %}
-          <p class="text-sm text-gray-500">{% trans "Sem vídeos." %}</p>
+          <p class="text-sm text-gray-500">{% trans "No videos." %}</p>
         {% endfor %}
       </div>
     </section>
@@ -480,7 +463,7 @@
   {% endif %}
 
   <p class="max-w-4xl mx-auto px-3 sm:px-4 pb-6 text-[11px] md:text-xs text-gray-500 text-center">
-    {% trans "Feito com ❤️ para a comunidade de imigrantes na Irlanda." %}
+    {% trans "Made with ❤️ for the immigrant community in Ireland." %}
   </p>
 
   <!-- TRACKING DE CLIQUES -->
@@ -512,11 +495,6 @@
       const loc = document.getElementById("locale").value;
       const url = `/${loc}/IE/`;
       window.location.href = url;
-    }
-
-    const goLC = document.getElementById("goLC");
-    if (goLC) {
-      goLC.addEventListener("click", goToLocale);
     }
 
     const goLCMobile = document.getElementById("goLCMobile");
