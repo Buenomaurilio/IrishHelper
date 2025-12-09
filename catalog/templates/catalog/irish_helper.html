@@ -9,6 +9,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 text-gray-900">
+
   <!-- HEADER -->
   <header class="sticky top-0 bg-white/90 backdrop-blur border-b z-20">
     <!-- Linha principal: bandeira + título + idioma + botão / sanduíche -->
@@ -22,31 +23,33 @@
         </h1>
       </div>
 
-      <!-- DIREITA: seletor de idioma + Go + menu sanduíche no mobile -->
+      <!-- DIREITA: seletor de idioma + Go + menu sanduíche (só mobile) -->
       <div class="flex items-center gap-2">
-
-        <!-- seletor de idioma (sempre visível) -->
+        <!-- seletor de idioma -->
         <select id="locale" class="border rounded px-2 py-1 text-xs sm:text-sm">
           <option value="pt-br" {% if locale == "pt-br" %}selected{% endif %}>Português</option>
           <option value="en"    {% if locale == "en" %}selected{% endif %}>English</option>
           <option value="es"    {% if locale == "es" %}selected{% endif %}>Español</option>
         </select>
 
-        <button type="button"
-                id="goLC"
-                class="border px-3 py-1 rounded text-xs sm:text-sm hidden sm:inline-block">
+        <!-- botão Go (desktop/tablet) -->
+        <button
+          type="button"
+          id="goLC"
+          class="border px-3 py-1 rounded text-xs sm:text-sm hidden sm:inline-block">
           {% trans "Ir" %}
         </button>
 
-        <!-- BOTÃO SANDUÍCHE (só mobile) -->
-        <button id="mobileMenuBtn"
-                class="md:hidden text-xl px-2 py-1 border rounded ml-1">
+        <!-- BOTÃO SANDUÍCHE (apenas mobile) -->
+        <button
+          id="mobileMenuBtn"
+          class="md:hidden text-xl px-2 py-1 border rounded ml-1">
           ☰
         </button>
       </div>
     </div>
 
-    <!-- MENU DESKTOP (fica logo abaixo, só md+) -->
+    <!-- MENU DESKTOP (logo abaixo do header, só md+) -->
     <div class="hidden md:block border-t border-gray-100">
       <nav class="max-w-4xl mx-auto px-3 sm:px-4 py-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">
         <a href="#uteis" class="hover:underline">{% trans "Links úteis" %}</a>
@@ -61,7 +64,7 @@
     </div>
   </header>
 
-  <!-- MENU MOBILE (DRAWER) -->
+  <!-- MENU MOBILE (drawer superior) -->
   <div id="mobileMenu" class="fixed inset-0 z-30 hidden md:hidden">
     <!-- fundo escurecido -->
     <div id="mobileMenuOverlay" class="absolute inset-0 bg-black/40"></div>
@@ -80,7 +83,7 @@
         </button>
       </div>
 
-      <!-- mesma navegação, em coluna -->
+      <!-- navegação em coluna -->
       <nav class="flex flex-col gap-2 text-sm">
         <a href="#uteis" data-mobile-nav-link class="py-1 border-b border-gray-100 hover:bg-gray-50 rounded px-1">
           {% trans "Links úteis" %}
@@ -108,11 +111,12 @@
         </a>
       </nav>
 
-      <!-- botão Go também dentro do menu (opcional) -->
+      <!-- botão Go dentro do menu -->
       <div class="mt-4 flex justify-end">
-        <button type="button"
-                id="goLCMobile"
-                class="border px-3 py-1 rounded text-xs sm:text-sm">
+        <button
+          type="button"
+          id="goLCMobile"
+          class="border px-3 py-1 rounded text-xs sm:text-sm">
           {% trans "Ir" %}
         </button>
       </div>
@@ -155,7 +159,7 @@
     </section>
 
     <!-- LINKS ÚTEIS -->
-    <section id="uteis" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm">
+    <section id="uteis" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm scroll-mt-24">
       <h3 class="text-lg md:text-xl font-bold">{% trans "Links úteis" %}</h3>
       <ul class="mt-4 grid gap-3">
         {% for r in useful_links %}
@@ -192,7 +196,7 @@
     </section>
 
     <!-- COMO SOLICITAR -->
-    <section id="como" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm">
+    <section id="como" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm scroll-mt-24">
       <h3 class="text-lg md:text-xl font-bold">{% trans "Como e onde solicitar" %}</h3>
       <div class="mt-4 space-y-3 md:space-y-4">
         {% for r in how_to %}
@@ -220,7 +224,7 @@
     </section>
 
     <!-- TELEFONES -->
-    <section id="telefones" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm">
+    <section id="telefones" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm scroll-mt-24">
       <h3 class="text-lg md:text-xl font-bold">{% trans "Telefones úteis" %}</h3>
       <ul class="mt-3 grid gap-3 text-sm">
         {% for r in phones %}
@@ -242,7 +246,7 @@
     </section>
 
     <!-- ENDEREÇOS -->
-    <section id="enderecos" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm">
+    <section id="enderecos" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm scroll-mt-24">
       <h3 class="text-lg md:text-xl font-bold">{% trans "Endereços" %}</h3>
       <ul class="mt-3 grid gap-3 text-sm">
         {% for r in addresses %}
@@ -268,7 +272,7 @@
     </section>
 
     <!-- WHATSAPP (ACOMODAÇÃO) -->
-    <section id="whatsapp" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm">
+    <section id="whatsapp" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm scroll-mt-24">
       <h3 class="text-lg md:text-xl font-bold">
         {% trans "Grupos de WhatsApp (acomodação)" %}
       </h3>
@@ -307,7 +311,7 @@
     </section>
 
     <!-- EMPREGOS: SITES + FACEBOOK -->
-    <section id="jobs" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm space-y-6">
+    <section id="jobs" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm space-y-6 scroll-mt-24">
       <h3 class="text-lg md:text-xl font-bold">
         {% trans "Empregos na Irlanda" %}
       </h3>
@@ -382,7 +386,7 @@
     </section>
 
     <!-- APPS E SERVIÇOS ÚTEIS -->
-    <section id="apps" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm">
+    <section id="apps" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm scroll-mt-24">
       <h3 class="text-lg md:text-xl font-bold">
         {% trans "Apps e serviços úteis" %}
       </h3>
@@ -419,7 +423,7 @@
     </section>
 
     <!-- VÍDEOS -->
-    <section id="videos" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm">
+    <section id="videos" class="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm scroll-mt-24">
       <h3 class="text-lg md:text-xl font-bold">{% trans "Vídeos recomendados" %}</h3>
       <div class="mt-3 grid gap-3 sm:grid-cols-2">
         {% for r in videos %}
@@ -488,7 +492,7 @@
     });
   </script>
 
-  <!-- BOTÃO DE IDIOMA (desktop + mobile) -->
+  <!-- BOTÕES DE IDIOMA (desktop + mobile) -->
   <script>
     function goToLocale() {
       const loc = document.getElementById("locale").value;
@@ -537,7 +541,7 @@
       mobileOverlay.addEventListener("click", closeMobileMenu);
     }
 
-    // fecha menu ao clicar em qualquer link do próprio menu
+    // fecha o menu ao clicar em um link interno
     document.querySelectorAll("[data-mobile-nav-link]").forEach((el) => {
       el.addEventListener("click", closeMobileMenu);
     });
