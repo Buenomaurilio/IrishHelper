@@ -7,6 +7,16 @@
   <title>{% trans "IrishHelper — Guia para imigrantes na Irlanda" %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Deixar o layout ~85% do tamanho original no mobile -->
+  <style>
+    /* até 640px (sm do Tailwind) */
+    @media (max-width: 640px) {
+      html {
+        font-size: 14px; /* padrão é 16px → 14px ≈ 87,5% (bem perto do teu 85%) */
+      }
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
   <!-- HEADER -->
