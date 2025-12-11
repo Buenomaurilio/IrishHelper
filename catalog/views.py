@@ -29,6 +29,12 @@ def irish_helper(request, locale="pt-br", country="IE"):
     # Normaliza valores
     locale = (locale or "pt-br").lower()
     country = (country or "IE").upper()
+    
+    
+    # 👉 MUITO IMPORTANTE: ativar o idioma escolhido
+    if locale in ("pt-br", "en", "es"):
+        translation.activate(locale)
+        request.LANGUAGE_CODE = locale
 
     now = timezone.now()
 

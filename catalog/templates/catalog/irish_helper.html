@@ -4,7 +4,7 @@
 <html lang="{{ locale }}">
 <head>
   <meta charset="utf-8">
-  <title>{% trans "IrishHelper — Guia para imigrantes na Irlanda" %}</title>
+  <title>{% trans "IrishHelper — Guide for immigrants in Ireland" %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -144,9 +144,9 @@
       <p class="mt-2 text-sm md:text-base text-gray-600">
         {% trans "Immigration (GNIB), PPS, Leap Card, Driver’s Licence (NDLS) and more — official links, step-by-step guides, phone numbers and addresses." %}
       </p>
-      <p class="text-xs md:text-sm text-gray-500 mt-2">
+      {% comment %} <p class="text-xs md:text-sm text-gray-500 mt-2">
         {% blocktrans %}Language: {{ locale }} | Country: {{ country }}{% endblocktrans %}
-      </p>
+      </p> {% endcomment %}
     </section>
 
     <!-- LINKS ÚTEIS -->

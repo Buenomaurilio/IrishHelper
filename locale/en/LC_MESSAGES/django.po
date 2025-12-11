@@ -8,115 +8,187 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-16 18:11+0000\n"
+"POT-Creation-Date: 2025-12-10 11:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: en\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: catalog/templates/catalog/irish_helper.html:7
-msgid "IrishHelper — Guia para imigrantes na Irlanda"
-msgstr "IrishHelper — Guide for Immigrants in Ireland"
+msgid "IrishHelper — Guide for immigrants in Ireland"
+msgstr ""
 
-#: catalog/templates/catalog/irish_helper.html:16
-msgid "IrishHelper — Guia Rápido da Irlanda"
-msgstr "IrishHelper — Quick Guide to Ireland"
+#: catalog/templates/catalog/irish_helper.html:31
+#: catalog/templates/catalog/irish_helper.html:79
+msgid "IrishHelper — Quick Guide to Ireland"
+msgstr ""
 
-#: catalog/templates/catalog/irish_helper.html:19
-#: catalog/templates/catalog/irish_helper.html:70
-msgid "Links úteis"
-msgstr "Useful links"
+#: catalog/templates/catalog/irish_helper.html:56
+#: catalog/templates/catalog/irish_helper.html:90
+#: catalog/templates/catalog/irish_helper.html:154
+msgid "Useful links"
+msgstr ""
 
-#: catalog/templates/catalog/irish_helper.html:20
-msgid "Como solicitar"
-msgstr "How to apply"
+#: catalog/templates/catalog/irish_helper.html:57
+#: catalog/templates/catalog/irish_helper.html:93
+msgid "How to apply"
+msgstr ""
 
-#: catalog/templates/catalog/irish_helper.html:21
-msgid "Telefones"
-msgstr "Phone numbers"
-
-#: catalog/templates/catalog/irish_helper.html:22
-#: catalog/templates/catalog/irish_helper.html:150
-msgid "Endereços"
-msgstr "Addresses"
-
-#: catalog/templates/catalog/irish_helper.html:23
-msgid "Vídeos"
-msgstr "Videos"
-
-#: catalog/templates/catalog/irish_helper.html:36
-msgid "Ir"
-msgstr "Go"
+#: catalog/templates/catalog/irish_helper.html:58
+#: catalog/templates/catalog/irish_helper.html:96
+#: catalog/templates/catalog/irish_helper.html:219
+msgid "Phone numbers"
+msgstr ""
 
 #: catalog/templates/catalog/irish_helper.html:59
-msgid "Tudo em um só lugar"
-msgstr "All in one place"
+#: catalog/templates/catalog/irish_helper.html:99
+#: catalog/templates/catalog/irish_helper.html:241
+msgid "Addresses"
+msgstr ""
+
+#: catalog/templates/catalog/irish_helper.html:60
+#: catalog/templates/catalog/irish_helper.html:102
+msgid "WhatsApp"
+msgstr ""
+
+#: catalog/templates/catalog/irish_helper.html:61
+#: catalog/templates/catalog/irish_helper.html:105
+msgid "Jobs"
+msgstr ""
 
 #: catalog/templates/catalog/irish_helper.html:62
-msgid ""
-"Imigração (GNIB), PPS, Leap Card, Carteira de motorista (NDLS) e mais — "
-"links oficiais, passo a passo, telefones e endereços."
+#: catalog/templates/catalog/irish_helper.html:108
+msgid "Useful apps"
 msgstr ""
+
+#: catalog/templates/catalog/irish_helper.html:63
+#: catalog/templates/catalog/irish_helper.html:111
+msgid "Videos"
+msgstr ""
+
+#: catalog/templates/catalog/irish_helper.html:142
+msgid "All in one place"
+msgstr ""
+
+#: catalog/templates/catalog/irish_helper.html:145
+msgid ""
 "Immigration (GNIB), PPS, Leap Card, Driver’s Licence (NDLS) and more — "
 "official links, step-by-step guides, phone numbers and addresses."
+msgstr ""
 
-#: catalog/templates/catalog/irish_helper.html:65
+#: catalog/templates/catalog/irish_helper.html:148
 #, python-format
-msgid "Idioma: %(locale)s | País: %(country)s"
-msgstr "Language: %(locale)s | Country: %(country)s"
+msgid "Language: %(locale)s | Country: %(country)s"
+msgstr ""
 
-#: catalog/templates/catalog/irish_helper.html:80
-msgid "Oficial"
-msgstr "Official"
+#: catalog/templates/catalog/irish_helper.html:164
+msgid "Official"
+msgstr ""
 
-#: catalog/templates/catalog/irish_helper.html:94
-msgid "Acessar"
-msgstr "Open"
+#: catalog/templates/catalog/irish_helper.html:178
+msgid "Open"
+msgstr ""
 
-#: catalog/templates/catalog/irish_helper.html:100
-msgid "Sem itens ainda."
-msgstr "No items yet."
+#: catalog/templates/catalog/irish_helper.html:184
+msgid "No items yet."
+msgstr ""
 
-#: catalog/templates/catalog/irish_helper.html:106
-msgid "Como e onde solicitar"
-msgstr "How and where to apply"
+#: catalog/templates/catalog/irish_helper.html:191
+msgid "How and where to apply"
+msgstr ""
 
-#: catalog/templates/catalog/irish_helper.html:120
-msgid "Mais detalhes"
-msgstr "More details"
+#: catalog/templates/catalog/irish_helper.html:207
+msgid "More details"
+msgstr ""
 
-#: catalog/templates/catalog/irish_helper.html:125
-msgid "Sem guias ainda."
-msgstr "No guides yet."
+#: catalog/templates/catalog/irish_helper.html:212
+msgid "No guides yet."
+msgstr ""
 
-#: catalog/templates/catalog/irish_helper.html:131
-msgid "Telefones úteis"
-msgstr "Useful Phone Numbers"
+#: catalog/templates/catalog/irish_helper.html:234
+msgid "No phone numbers."
+msgstr ""
 
-#: catalog/templates/catalog/irish_helper.html:144
-msgid "Sem telefones."
-msgstr "No phone numbers yet."
+#: catalog/templates/catalog/irish_helper.html:255
+msgid "Open on map"
+msgstr ""
 
-#: catalog/templates/catalog/irish_helper.html:162
-msgid "Abrir no mapa"
-msgstr "Open on map."
+#: catalog/templates/catalog/irish_helper.html:260
+msgid "No addresses."
+msgstr ""
 
-#: catalog/templates/catalog/irish_helper.html:167
-msgid "Sem endereços."
-msgstr "No Addresses"
+#: catalog/templates/catalog/irish_helper.html:268
+msgid "WhatsApp groups (accommodation)"
+msgstr ""
 
-#: catalog/templates/catalog/irish_helper.html:173
-msgid "Vídeos recomendados"
-msgstr "Recommended videos."
+#: catalog/templates/catalog/irish_helper.html:271
+msgid "Groups to find rooms, houses and accommodation in Ireland."
+msgstr ""
 
-#: catalog/templates/catalog/irish_helper.html:183
-msgid "Sem vídeos."
-msgstr "No Videos"
+#: catalog/templates/catalog/irish_helper.html:291
+msgid "Join group"
+msgstr ""
 
-#: catalog/templates/catalog/irish_helper.html:209
-msgid "Feito com ❤️ para a comunidade de imigrantes na Irlanda."
-msgstr "Made with ❤️ for the immigrant community in Ireland."
+#: catalog/templates/catalog/irish_helper.html:298
+msgid "No groups yet."
+msgstr ""
+
+#: catalog/templates/catalog/irish_helper.html:307
+msgid "Jobs in Ireland"
+msgstr ""
+
+#: catalog/templates/catalog/irish_helper.html:313
+msgid "Job sites"
+msgstr ""
+
+#: catalog/templates/catalog/irish_helper.html:331
+msgid "Visit site"
+msgstr ""
+
+#: catalog/templates/catalog/irish_helper.html:338
+msgid "No job sites yet."
+msgstr ""
+
+#: catalog/templates/catalog/irish_helper.html:347
+msgid "Job groups (Facebook)"
+msgstr ""
+
+#: catalog/templates/catalog/irish_helper.html:365
+msgid "Open group"
+msgstr ""
+
+#: catalog/templates/catalog/irish_helper.html:372
+msgid "No job groups yet."
+msgstr ""
+
+#: catalog/templates/catalog/irish_helper.html:382
+msgid "Useful apps and services"
+msgstr ""
+
+#: catalog/templates/catalog/irish_helper.html:385
+msgid "Apps and services that make day-to-day life in Ireland easier."
+msgstr ""
+
+#: catalog/templates/catalog/irish_helper.html:403
+msgid "Open app/site"
+msgstr ""
+
+#: catalog/templates/catalog/irish_helper.html:410
+msgid "No apps yet."
+msgstr ""
+
+#: catalog/templates/catalog/irish_helper.html:418
+msgid "Recommended videos"
+msgstr ""
+
+#: catalog/templates/catalog/irish_helper.html:429
+msgid "No videos."
+msgstr ""
+
+#: catalog/templates/catalog/irish_helper.html:460
+msgid "Made with ❤️ for the immigrant community in Ireland."
+msgstr ""
